@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Baixar o código
-      uses: actions/checkout@v4~
+      uses: actions/checkout@v4
 
     - name: Configurar Python
       uses: actions/setup-python@v5
@@ -24,7 +24,7 @@ jobs:
           pip install pytest ruff
 
     - name: Rodar lint
-      run: ruff check .
+      run: ruff check 
 
     - name: Rodar testes
       run: pytest
