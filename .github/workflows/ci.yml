@@ -3,6 +3,10 @@ name: CI
 on:
   push:
     branches: [main, master]
+  pull_request:
+    branches: [main, master]  
+
+
 
 jobs:
   test:
@@ -24,7 +28,7 @@ jobs:
           pip install pytest ruff
 
     - name: Rodar lint
-      run: ruff check 
+      run: ruff check .
 
     - name: Rodar testes
       run: pytest
